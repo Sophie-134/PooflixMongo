@@ -71,9 +71,11 @@ public class Contenido {
         this.descripcion = descripcion;
     }
 
-	public ObjectId get_id() {
-		return _id;
-	}
+	   //HACK para que el ObjectId se dibuje en JSON como string
+    //solo tocar el getter
+    public String get_id(){
+        return _id.toHexString();
+    }
 
 	public void set_id(ObjectId _id) {
 		this._id = _id;
