@@ -17,7 +17,8 @@ public class SerieService {
 
     public void grabar(Serie serie) {
         sRepository.save(serie);
-    }    
+    }
+
     public List<Serie> listarSeries() {
         return sRepository.findAll();
     }
@@ -25,5 +26,9 @@ public class SerieService {
     public Serie buscarPorId(ObjectId id) {
         return sRepository.findBy_id(id);
 
+    }
+
+    public void deleteById(ObjectId id) {
+        sRepository.deleteById(id);
     }
 }
